@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export function Hero() {
     return (
-        <section className="bg-[#1D2428] text-white relative overflow-hidden bg-cover bg-center bg-no-repeat"
+        <section className="bg-[#1d2428] text-white relative overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/background.png')" }} 
         >
             <div>
