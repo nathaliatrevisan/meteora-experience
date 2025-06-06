@@ -1,6 +1,7 @@
 'use client';
+
 import Image from 'next/image';
-import { FaMobileAlt, FaAndroid, FaApple, FaServer, FaLaptop } from 'react-icons/fa';
+import { FaMobileAlt, FaAndroid, FaApple, FaServer, FaLaptop, FaWhatsapp } from 'react-icons/fa';
 import SuperHero from '../../../public/images/SuperHero_Principal.png';
 import AppFinanca from '../../../public/images/ui.png';
 import FFIcon from '../../../public/images/flutterflow_icon.png';
@@ -15,12 +16,11 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 export function Projects() {
   return (
-    <section className="bg-[#1d2428] text-white px-6 py-20 md:px-12 lg:px-24 overflow-x-hidden">
+    <section className="relative bg-[#1d2428] text-white px-6 py-20 md:px-12 lg:px-24 overflow-x-hidden">
       <style jsx global>{`
         body, html {
           overflow-x: hidden;
         }
-        /* Personaliza os botões do swiper */
         .swiper-button-next::after,
         .swiper-button-prev::after {
           color: #22d3ee;
@@ -30,31 +30,22 @@ export function Projects() {
         .swiper-button-prev {
           top: 45%;
         }
-
-        /* Faz o container do swiper permitir overflow para o crescimento */
         .project-swiper {
           overflow: visible !important;
           padding-bottom: 2rem;
         }
-
-        /* Remove overflow hidden do wrapper dos slides */
         .swiper-wrapper {
           overflow: visible !important;
         }
-
-        /* Permite o crescimento do slide e centraliza o hover */
         .swiper-slide {
           overflow: visible !important;
           transition: transform 0.3s ease;
           will-change: transform;
-          /* margens para evitar corte ao crescer */
           margin-left: 10px;
           margin-right: 10px;
           position: relative;
           z-index: 0;
         }
-
-        /* Quando hover no slide, aumenta, traz para frente e aumenta z-index */
         .swiper-slide:hover {
           transform: scale(1.05);
           z-index: 10;
@@ -63,20 +54,20 @@ export function Projects() {
 
       {/* Cabeçalho */}
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Meus Projetos</h2>
+        <h2 className="text-3xl md:text-3xl font-bold mb-4">Projetos</h2>
         <p className="text-gray-300 max-w-2xl mx-auto text-lg">
           Confira algumas soluções digitais desenvolvidas com foco em performance, design e inovação.
         </p>
       </div>
 
-      {/* Carrossel dos Projetos */}
+      {/* Carrossel */}
       <Swiper
         spaceBetween={20}
         slidesPerView={1}
         breakpoints={{
-          640: { slidesPerView: 1, spaceBetween: 20 },
-          768: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 20 },
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
         }}
         navigation
         pagination={{ clickable: true }}
@@ -155,6 +146,16 @@ export function Projects() {
           </div>
         </SwiperSlide>
       </Swiper>
+
+      {/* Botão flutuante do WhatsApp */}
+      <a
+        href="https://wa.me/5511968272462?text=Olá,%20gostaria%20de%20falar%20com%20você!"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition duration-300"
+      >
+        <FaWhatsapp size={24} />
+      </a>
     </section>
   );
 }
