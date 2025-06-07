@@ -25,3 +25,22 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* src/app/globals.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adicione esta regra */
+section[id] {
+  scroll-margin-top: 26px; /* Ajuste este valor */
+  /*
+    * 76px é um bom ponto de partida, baseado na altura do seu header (aprox. 72px)
+    * mais uma pequena sobra.
+    * Você pode precisar ajustar esse valor para que fique perfeito com a altura exata do seu header
+    * e o espaçamento desejado.
+  */
+}
+
+/* Resto dos seus estilos... */
+

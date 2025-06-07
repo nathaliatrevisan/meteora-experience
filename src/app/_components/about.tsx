@@ -44,7 +44,7 @@ export function About() {
             href="https://www.linkedin.com/in/nathalia-trevisan-074a9714b"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#29F8FF] px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit mb-4"
+            className="bg-cyan-400 px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit mb-4"
           >
             LinkedIn
           </a>

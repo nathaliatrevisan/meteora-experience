@@ -34,7 +34,7 @@ export function Contato() {
 
   return (
     <section
-      className="bg-cover bg-center text-white py-20 px-6 md:px-12 lg:px-24"
+      className="bg-cover bg-center text-white py-20 px-6 md:px-12 lg:px-24 mt-6"
       style={{
         backgroundImage: `url(${FotoPrincipal.src})`,
         backgroundRepeat: 'no-repeat',
@@ -79,7 +79,7 @@ export function Contato() {
           <div className="col-span-1 md:col-span-2 flex justify-end mt-4">
             <button
               type="submit"
-              className="bg-[#29F8FF] px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit mb-4"
+              className="bg-cyan-400 px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit mb-4"
             >
               Enviar
             </button>

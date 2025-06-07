@@ -35,7 +35,7 @@ export function Hero() {
 
                         <a 
                             href="#"
-                            className="bg-[#29F8FF] px-5 py-2 rounded-md font-semibold flex items-center
+                            className="bg-cyan-400 px-5 py-2 rounded-md font-semibold flex items-center
                             justify-center w-fit mb-4"
                         >
                             Orçamento
