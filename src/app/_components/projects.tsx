@@ -91,7 +91,8 @@ export function Projects() {
   const selected = projectList.find((p) => p.id === selectedProject);
 
   return (
-    <section className="relative bg-[#1d2428] text-white px-6 py-20 md:px-12 lg:px-24">
+    <section id="projects" className="relative bg-[#1d2428] text-white px-6 py-20 md:px-12 lg:px-24">
+      {/* Adicionado id="projects" para navegação */}
       <style jsx global>{`
         .swiper-button-next::after,
         .swiper-button-prev::after {
@@ -99,17 +100,45 @@ export function Projects() {
           font-size: 2.5rem;
         }
 
-        .swiper-button-next,
+        /* --- Início da correção das setas --- */
         .swiper-button-prev {
-          top: 45%;
+          left: 0.5rem; /* Posição à esquerda para a seta anterior */
+          right: auto; /* Garante que não use a regra 'right' geral */
+          top: 45%; /* Centraliza verticalmente */
+          transform: translateY(-50%); /* Garante centralização vertical */
+        }
+
+        .swiper-button-next {
+          right: 0.5rem; /* Posição à direita para a seta próxima */
+          left: auto; /* Garante que não use a regra 'left' geral */
+          top: 45%; /* Centraliza verticalmente */
+          transform: translateY(-50%); /* Garante centralização vertical */
+        }
+        /* --- Fim da correção das setas --- */
+
+        /* Esconde os botões em telas menores que MD, se a navegação for apenas por toque */
+        @media (max-width: 767px) {
+          .swiper-button-next,
+          .swiper-button-prev {
+            display: none;
+          }
         }
 
         .swiper {
-          overflow: visible !important;
+          /* Removido overflow: visible!important; aqui e adicionado padding */
           padding-bottom: 4rem;
+          /* Adiciona padding horizontal para garantir que os slides e setas fiquem visíveis */
+          padding-left: 1rem !important; /* Ajuste este valor conforme o px-6 da seção */
+          padding-right: 1rem !important; /* Ajuste este valor conforme o px-6 da seção */
+          /* É importante que o padding-left/right seja menor ou igual ao px da section */
+
+          /* Mantendo o padding para a seção para o problema de corte no hover, como você tinha. */
+          /* Se for para focar SOMENTE nas setas, este padding poderia ser removido, 
+             mas para não "estragar" o que já estava funcionando parcialmente no desktop, mantive. */
         }
 
         .swiper-wrapper {
+          /* overflow: visible !important; - Pode causar problemas em certas situações, mas se estiver funcionando ok com o padding acima, mantenha. */
           overflow: visible !important;
         }
 
@@ -128,9 +157,8 @@ export function Projects() {
           z-index: 10;
         }
 
-        body {
-          overflow-x: hidden;
-        }
+        /* Removido body { overflow-x: hidden; } daqui para depuração */
+        /* Recomenda-se adicionar globalmente no arquivo styles/globals.css ou no layout principal se for realmente necessário após a correção */
       `}</style>
 
       <div className="text-center mb-16">
@@ -141,16 +169,16 @@ export function Projects() {
       </div>
 
       <Swiper
-        spaceBetween={20}
+        spaceBetween={20} // Mantenha o espaçamento entre os slides
         slidesPerView={1}
         breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 4 }
+          640: { slidesPerView: 1 }, // `sm` breakpoint do Tailwind
+          768: { slidesPerView: 2 }, // `md` breakpoint do Tailwind
+          1024: { slidesPerView: 3 }, // `lg` breakpoint do Tailwind
+          1280: { slidesPerView: 4 } // `xl` breakpoint do Tailwind
         }}
-        navigation
-        pagination={{ clickable: true }}
+        navigation // Habilita a navegação com setas
+        pagination={{ clickable: true }} // Habilita a paginação com bolinhas
         modules={[Navigation, Pagination]}
         className="project-swiper"
       >
