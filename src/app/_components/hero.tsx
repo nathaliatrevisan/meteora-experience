@@ -1,4 +1,4 @@
-import { FaWhatsapp } from 'react-icons/fa';
+//import { FaWhatsapp } from 'react-icons/fa';
 import FotoPrincipal from '../../../public/images/astro_hero.png';
 import Image from 'next/image';
 
@@ -29,7 +29,7 @@ export function Hero() {
                         </h1>
 
                         <p className="lg:text-lg">
-                            MVP's personalizados sob demanda e designs inovadores de UI/UX
+                            MVP&apos;s personalizados sob demanda e designs inovadores de UI/UX
                         </p>
 
                         <a

@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { JSX, useState } from 'react';
 import {
   FaMobileAlt,
@@ -25,10 +25,10 @@ import ProjectDetails from './ProjectDetails';
 export type Project = {
   id: number;
   title: string;
-  image: any;
+  image: StaticImageData;
   description: string;
   compatibility: { icon: JSX.Element; label: string }[];
-  technologies: { icon: any; label: string }[];
+  technologies: { icon: StaticImageData; label: string }[];
   videoUrl?: string;
 };
 
@@ -37,18 +37,17 @@ const projectList: Project[] = [
     id: 1,
     title: 'SuperHero',
     image: SuperHero,
-    description: 'Detalhes: Esse Aplicativo foi desenvolvido para colocar em prática o consumo de API. Ele consiste em conectar fãs de super-heróis aos principais detalhes dos seus heróis favoritos.',
+    description:
+      'Detalhes: Esse Aplicativo foi desenvolvido para colocar em prática o consumo de API. Ele consiste em conectar fãs de super-heróis aos principais detalhes dos seus heróis favoritos.',
     compatibility: [
       { icon: <FaMobileAlt />, label: 'Mobile' },
       { icon: <FaAndroid />, label: 'Android' },
       { icon: <FaApple />, label: 'iOS' },
       { icon: <FaServer />, label: 'API' }
     ],
-    technologies: [
-      { icon: FFIcon, label: 'FlutterFlow' },
-    ],
-    // AQUI: URL do vídeo MP4 atualizada
-    videoUrl: 'https://firebasestorage.googleapis.com/v0/b/meteora-experience.firebasestorage.app/o/videos%2FSuperhero.mp4?alt=media&token=0066e1e5-6123-43dd-82eb-ce753761fef5'
+    technologies: [{ icon: FFIcon, label: 'FlutterFlow' }],
+    videoUrl:
+      'https://firebasestorage.googleapis.com/v0/b/meteora-experience.firebasestorage.app/o/videos%2FSuperhero.mp4?alt=media&token=0066e1e5-6123-43dd-82eb-ce753761fef5'
   },
   {
     id: 2,
@@ -65,7 +64,8 @@ const projectList: Project[] = [
       { icon: FFIcon, label: 'FlutterFlow' },
       { icon: SBIcon, label: 'Supabase' }
     ],
-    videoUrl: 'https://firebasestorage.googleapis.com/v0/b/meteora-experience.firebasestorage.app/o/videos%2FFinanceFlow.mp4?alt=media&token=53fdcc41-42fb-42ba-97fe-c1f597ad69a5'
+    videoUrl:
+      'https://firebasestorage.googleapis.com/v0/b/meteora-experience.firebasestorage.app/o/videos%2FFinanceFlow.mp4?alt=media&token=53fdcc41-42fb-42ba-97fe-c1f597ad69a5'
   },
   {
     id: 3,
@@ -81,12 +81,14 @@ const projectList: Project[] = [
       { icon: FFIcon, label: 'FlutterFlow' },
       { icon: SBIcon, label: 'Supabase' }
     ],
-    videoUrl: 'https://firebasestorage.googleapis.com/v0/b/meteora-experience.firebasestorage.app/o/videos%2FOverSafe.mp4?alt=media&token=bb9fb175-9e17-4dfa-bf47-2f00c7229cd1'
+    videoUrl:
+      'https://firebasestorage.googleapis.com/v0/b/meteora-experience.firebasestorage.app/o/videos%2FOverSafe.mp4?alt=media&token=bb9fb175-9e17-4dfa-bf47-2f00c7229cd1'
   }
 ];
 
 export function Projects() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const selected = projectList.find((p) => p.id === selectedProject);
 
   return (
     <section className="relative bg-[#1d2428] text-white px-6 py-20 md:px-12 lg:px-24">
@@ -213,9 +215,9 @@ export function Projects() {
         <FaWhatsapp size={24} />
       </a>
 
-      {selectedProject !== null && (
+      {selected && (
         <ProjectDetails
-          project={projectList.find((p) => p.id === selectedProject)!}
+          project={selected}
           onClose={() => setSelectedProject(null)}
         />
       )}

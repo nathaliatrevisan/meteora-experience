@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import FotoPrincipal from '../../../public/images/background.png';
-import Image from 'next/image';
+//import Image from 'next/image';
 
 export function Contato() {
   const form = useRef<HTMLFormElement>(null);
