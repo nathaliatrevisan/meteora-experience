@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fa';
 import SuperHero from '../../../public/images/SuperHero_Principal.png';
 import AppFinanca from '../../../public/images/ui.png';
+import AppOver from '../../../public/images/overSafve.png';
 import FFIcon from '../../../public/images/flutterflow_icon.png';
 import SBIcon from '../../../public/images/supabase_icon.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -63,12 +64,13 @@ const projectList: Project[] = [
     technologies: [
       { icon: FFIcon, label: 'FlutterFlow' },
       { icon: SBIcon, label: 'Supabase' }
-    ]
+    ],
+    videoUrl: 'https://firebasestorage.googleapis.com/v0/b/meteora-experience.firebasestorage.app/o/videos%2FFinanceFlow.mp4?alt=media&token=53fdcc41-42fb-42ba-97fe-c1f597ad69a5'
   },
   {
     id: 3,
     title: 'OverSafe',
-    image: AppFinanca,
+    image: AppOver,
     description: 'Aplicativo de OverLock para controle de inadimplência em self-storage.',
     compatibility: [
       { icon: <FaMobileAlt />, label: 'Mobile' },
@@ -78,7 +80,8 @@ const projectList: Project[] = [
     technologies: [
       { icon: FFIcon, label: 'FlutterFlow' },
       { icon: SBIcon, label: 'Supabase' }
-    ]
+    ],
+    videoUrl: 'https://firebasestorage.googleapis.com/v0/b/meteora-experience.firebasestorage.app/o/videos%2FOverSafe.mp4?alt=media&token=bb9fb175-9e17-4dfa-bf47-2f00c7229cd1'
   }
 ];
 

@@ -10,7 +10,7 @@ interface ProjectDetailsProps {
 export default function ProjectDetails({ project, onClose }: ProjectDetailsProps) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
-      <div className="bg-[#1d2428] text-white p-6 rounded-lg w-full max-w-2xl relative shadow-lg max-h-[90vh] overflow-y-auto">
+      <div className="bg-[#1d2428] text-white p-6 rounded-lg w-full max-w-3xl relative shadow-lg max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-300 hover:text-white text-2xl transition"
@@ -21,12 +21,11 @@ export default function ProjectDetails({ project, onClose }: ProjectDetailsProps
         <h2 className="text-2xl font-bold mb-6 text-center text-cyan-400">{project.title}</h2>
 
         <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-          {/* Vídeo no lugar do GIF - Propriedade 'alt' removida */}
-          <div className="flex justify-center md:w-1/2 w-full">
+          {/* Vídeo flexível e sem borda feia */}
+          <div className="w-full md:w-1/2 flex justify-center">
             <video
               src={project.videoUrl}
-              // Removido: alt={project.title} // <-- Esta linha foi removida!
-              className="w-[180px] h-[360px] object-contain rounded-md md:mx-0 mx-auto"
+              className="w-full h-auto max-h-[400px] rounded-lg shadow-lg"
               autoPlay
               loop
               muted
