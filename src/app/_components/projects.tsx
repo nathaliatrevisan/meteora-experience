@@ -37,7 +37,7 @@ const projectList: Project[] = [
     id: 1,
     title: 'SuperHero',
     image: SuperHero,
-    description: 'Aplicativo que conecta fãs de super-heróis aos principais detalhes dos seus heróis.',
+    description: 'Detalhes: Esse Aplicativo foi desenvolvido para colocar em prática o consumo de API. Ele consiste em conectar fãs de super-heróis aos principais detalhes dos seus heróis favoritos.',
     compatibility: [
       { icon: <FaMobileAlt />, label: 'Mobile' },
       { icon: <FaAndroid />, label: 'Android' },
@@ -54,7 +54,7 @@ const projectList: Project[] = [
     id: 2,
     title: 'Finance Flow',
     image: AppFinanca,
-    description: 'Sistema de controle financeiro pessoal com dashboards.',
+    description: 'Detalhes: Esse Aplicativo é um Sistema de controle financeiro pessoal.',
     compatibility: [
       { icon: <FaMobileAlt />, label: 'Mobile' },
       { icon: <FaLaptop />, label: 'Web' },
@@ -71,7 +71,7 @@ const projectList: Project[] = [
     id: 3,
     title: 'OverSafe',
     image: AppOver,
-    description: 'Aplicativo de OverLock para controle de inadimplência em self-storage.',
+    description: 'Detalhes: Aplicativo de Lock check para controle de status de box de self-storage.',
     compatibility: [
       { icon: <FaMobileAlt />, label: 'Mobile' },
       { icon: <FaAndroid />, label: 'Android' },

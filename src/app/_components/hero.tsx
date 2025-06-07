@@ -29,11 +29,11 @@ export function Hero() {
                         </h1>
 
                         <p className="lg:text-lg">
-                            MVP's personalizados sob demanda e designs inovadores de UI/UX.
+                            MVP's personalizados sob demanda e designs inovadores de UI/UX
                         </p>
 
                         <a
-                            href="#"
+                            href="#contact"
                             className="bg-cyan-400 px-5 py-2 rounded-md font-semibold flex items-center
                             justify-center w-fit mb-4"
                         >
