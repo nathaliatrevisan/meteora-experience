@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import Supabase from '../../../public/images/supabase.png';
 import IotIcon from '../../../public/images/iot_icon.png';
-import FFIcon from '../../../public/images/flutterflow_icon.png';
 import MVPImage from '../../../public/images/mvp.png';
 import { useEffect, useRef } from 'react';
 import { SpaceBackground } from './SpaceBackground';
@@ -11,9 +10,9 @@ import { SpaceBackground } from './SpaceBackground';
 const services: { title: string; description: string; image: Parameters<typeof Image>[0]['src']; tags: string[]; useIconSlot?: boolean }[] = [
   {
     title: 'Banco de Dados',
-    description: 'Modelagem de tabelas, relacionamentos, RLS, Functions e Edge Functions. Foco em análise de CPU, RAM, índices e queries para um banco que aguenta crescer.',
+    description: 'Modelagem de tabelas, relacionamentos, RLS, Functions e Edge Functions. Foco em desempenho real — análise de CPU, RAM, índices e queries para um banco que aguenta crescer.',
     image: Supabase,
-    tags: ['PostgreSQL', 'Supabase', 'Firebase', 'RLS', 'Functions'],
+    tags: ['PostgreSQL', 'Supabase', 'RLS', 'Functions'],
   },
   {
     title: 'APIs REST',
@@ -24,13 +23,13 @@ const services: { title: string; description: string; image: Parameters<typeof I
   },
   {
     title: 'MVPs',
-    description: 'Do banco ao produto funcional em FlutterFlow ou Next.js. Estrutura certa desde o início para você validar rápido e não precisar refatorar tudo depois.',
+    description: 'Do banco ao produto funcional — em FlutterFlow ou Next.js. Estrutura certa desde o início para você validar rápido e não precisar refatorar tudo depois.',
     image: MVPImage,
     tags: ['FlutterFlow', 'Next.js', 'Backend', 'Launch'],
   },
   {
     title: 'IoT & Automação',
-    description: 'Integração de CLPs e equipamentos com comunicação Profinet, Modbus, Ethernet e TCP/IP via Node-RED. Dados de chão de fábrica indo direto pro banco.',
+    description: 'Integração de CLPs e equipamentos com comunicação Profinet, Modbus, Ethernet e TCP/IP via Node-RED. Dados de chão de fábrica indo direto pro banco — sem intermediários.',
     image: IotIcon,
     tags: ['Node-RED', 'Modbus', 'Profinet', 'CLP'],
   },

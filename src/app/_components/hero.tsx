@@ -40,8 +40,7 @@ const CODE_LINES = [
 
 const KEYWORDS = ['const','let','type','interface','function','return','export','default','await','new','extends','import','from'];
 const TYPES    = ['string','boolean','void','Promise','UIComponent','SupabaseClient','MVP','Vision','RealProduct','Experience'];
-const STRINGS  = /(".*?"|'.*?'|`.*?`)/g;
-const NUMBERS  = /\b(\d+)\b/g;
+
 
 function tokenize(text: string): { word: string; color: string }[] {
   if (!text.trim()) return [{ word: text, color: '#transparent' }];
@@ -228,7 +227,6 @@ export function Hero() {
 
     const TERM_PAD_X = 20;
     const TERM_PAD_Y = 48;
-    const TERM_TOP   = 14;
     const TERM_H_MAX = MAX_VISIBLE * LINE_H + TERM_PAD_Y + 28;
 
     const draw = () => {
